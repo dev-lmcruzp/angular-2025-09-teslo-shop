@@ -1,0 +1,18 @@
+<div class="card bg-base-100 shadow-sm animate-fadeIn">
+  <figure class="px-5 pt-5">
+    <img [src]="product().images | productImage : imageBasePath" [alt]="product().title" class="rounded-xl" />
+  </figure>
+  <div class="card-body">
+    <h2 class="card-title font-montserrat text-accent text-xl hover:underline cursor-pointer"
+    [routerLink]="['/product', product().slug]">
+      {{ product().title }}
+    </h2>
+    <p>{{ product().description | slice: 0 : 70}}</p>
+    <div class="card-actions justify-end">
+      <a class="link link-accent" [routerLink]="['/product', product().slug]">
+        Ver producto
+      </a>
+
+    </div>
+  </div>
+</div>
